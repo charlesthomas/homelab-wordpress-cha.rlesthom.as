@@ -1,0 +1,40 @@
+_commit: v1.8.2-12-g4261f1a
+_src_path: /Users/crthomas/code/charlesthomas/homelab-template
+additionalResources: ''
+backups: true
+helm: false
+homepageDescription: Wordpress Blog
+homepageEnabled: true
+homepageGroup: Web
+homepageIcon: wordpress
+homepageName: cha.rlesthom.as
+ingHost: cha.rlesthom.as
+ingName: wordpress-cha-rlesthom-as
+ingress: false
+labels: 'app: wordpress'
+name: wordpress
+namespace: wordpress-cha-rlesthom-as
+pvc: false
+reloader: true
+resources:
+- backups.yaml
+- configmaps.yaml
+- deployments.yaml
+- external-secrets.yaml
+- ingresses.yaml
+- pvcs.yaml
+- service-accounts.yaml
+- services.yaml
+- statefulsets.yaml
+service: true
+serviceAccount: true
+svcAccountName: wordpress
+svcName: wordpress
+svcPortName: http
+svcPortNum: 80
+svcProtocol: TCP
+svcSelector: 'app: wordpress'
+svcTargetPort: http
+svcType: ClusterIP
+upstreamURL: https://wordpress.com/
+url: https://github.com/charlesthomas/homelab-wordpress-cha.rlesthom.as
