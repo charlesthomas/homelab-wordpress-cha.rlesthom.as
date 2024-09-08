@@ -1,6 +1,6 @@
 _commit: v1.8.2-12-g4261f1a
 _src_path: /Users/crthomas/code/charlesthomas/homelab-template
-additionalResources: ''
+additionalResources: 'network-policies.yaml'
 backups: true
 helm: false
 homepageDescription: Wordpress Blog
@@ -26,8 +26,8 @@ resources:
 - service-accounts.yaml
 - services.yaml
 - statefulsets.yaml
-service: true
-serviceAccount: true
+service: false
+serviceAccount: false
 svcAccountName: wordpress
 svcName: wordpress
 svcPortName: http
