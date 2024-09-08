@@ -1,0 +1,45 @@
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: mariadb
+  namespace: wordpress-cha-rlesthom-as
+  labels:
+    app.kubernetes.io/name: mariadb
+    app.kubernetes.io/version: 11.4.3
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: mariadb
+      app.kubernetes.io/version: 11.4.3
+  policyTypes:
+    - Ingress
+    - Egress
+  egress:
+    - {}
+  ingress:
+    - ports:
+        - port: 3306
+        - port: 3306
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: wordpress
+  namespace: wordpress-cha-rlesthom-as
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/version: 6.6.1
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: wordpress
+  policyTypes:
+    - Ingress
+    - Egress
+  egress:
+    - {}
+  ingress:
+    - ports:
+        - port: 8080
+        - port: 8443

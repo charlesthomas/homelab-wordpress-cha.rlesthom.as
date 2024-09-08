@@ -1,0 +1,16 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: wordpress
+  namespace: wordpress-cha-rlesthom-as
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/version: 6.6.1
+spec:
+  accessModes:
+    - "ReadWriteMany"
+  resources:
+    requests:
+      storage: "10Gi"
+  storageClassName: longhorn-critical
