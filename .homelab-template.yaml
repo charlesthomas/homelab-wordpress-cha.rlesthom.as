@@ -1,13 +1,9 @@
 _commit: v1.8.2-12-g4261f1a
 _src_path: /Users/crthomas/code/charlesthomas/homelab-template
-additionalResources: 'network-policies.yaml'
+additionalResources: 'certificates.yaml,network-policies.yaml'
 backups: true
 helm: false
-homepageDescription: Wordpress Blog
-homepageEnabled: true
-homepageGroup: Web
-homepageIcon: wordpress
-homepageName: cha.rlesthom.as
+homepageEnabled: false
 ingHost: cha.rlesthom.as
 ingName: wordpress-cha-rlesthom-as
 ingress: false

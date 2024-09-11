@@ -7,6 +7,8 @@ metadata:
   labels:
     app.kubernetes.io/name: wordpress
     app.kubernetes.io/version: 6.6.1
+    recurring-job.longhorn.io/source: enabled
+    recurring-job.longhorn.io/wordpress-cha-rlesthom-as: enabled
 spec:
   accessModes:
     - "ReadWriteMany"
