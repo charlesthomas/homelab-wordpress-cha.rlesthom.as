@@ -10,6 +10,7 @@ commonLabels:
 
 resources:
 - resources/backups.yaml
+- resources/certificates.yaml
 - resources/configmaps.yaml
 - resources/deployments.yaml
 - resources/external-secrets.yaml
@@ -19,6 +20,7 @@ resources:
 - resources/service-accounts.yaml
 - resources/services.yaml
 - resources/statefulsets.yaml
+
 patches:
 - patch: |-
     apiVersion: apps/v1
@@ -40,19 +42,3 @@ patches:
         reloader.stakater.com/auto: "true"
   target:
     kind: StatefulSet
-- patch: |-
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-      name: wordpress-cha-rlesthom-as
-      namespace: wordpress-cha-rlesthom-as
-      annotations:
-        gethomepage.dev/href: https://cha.rlesthom.as
-        gethomepage.dev/enabled: "true"
-        gethomepage.dev/description: Wordpress Blog
-        gethomepage.dev/group: Web
-        gethomepage.dev/icon: wordpress
-        gethomepage.dev/name: cha.rlesthom.as
-        gethomepage.dev/pod-selector: ""
-  target:
-    kind: Ingress

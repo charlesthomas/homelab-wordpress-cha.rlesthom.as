@@ -2,7 +2,7 @@
 apiVersion: longhorn.io/v1beta2
 kind: RecurringJob
 metadata:
-  name: wordpress
+  name: wordpress-cha-rlesthom-as
   namespace: longhorn # must be longhorn
 spec:
   concurrency: 1
@@ -10,8 +10,8 @@ spec:
   groups:
   - wordpress
   labels:
-    app: wordpress
-  name: wordpress
+    app: wordpress-cha-rlesthom-as
+  name: wordpress-cha-rlesthom-as
   retain: 7
-  task: 
+  task: backup
 

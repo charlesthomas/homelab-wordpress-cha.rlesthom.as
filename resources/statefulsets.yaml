@@ -193,13 +193,14 @@ spec:
     - metadata:
         name: data
         labels:
-          app.kubernetes.io/instance: release-name
           app.kubernetes.io/name: mariadb
           app.kubernetes.io/component: primary
+          recurring-job.longhorn.io/source: enabled
+          recurring-job.longhorn.io/wordpress-cha-rlesthom-as: enabled
       spec:
         accessModes:
           - "ReadWriteMany"
         resources:
           requests:
             storage: "8Gi"
-        storageClassName: nfs-critical
+        storageClassName: longhorn-critical
