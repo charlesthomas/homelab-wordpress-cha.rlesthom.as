@@ -35,7 +35,6 @@ spec:
             - podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    app.kubernetes.io/instance: release-name
                     app.kubernetes.io/name: mariadb
                     app.kubernetes.io/component: primary
                 topologyKey: kubernetes.io/hostname
@@ -203,4 +202,4 @@ spec:
         resources:
           requests:
             storage: "8Gi"
-        storageClassName: longhorn-critical
+        storageClassName: longhorn-retain

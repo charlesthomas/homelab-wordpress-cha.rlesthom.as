@@ -19,7 +19,6 @@ spec:
       targetPort: mysql
       nodePort: null
   selector:
-    app.kubernetes.io/instance: release-name
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/component: primary
 ---

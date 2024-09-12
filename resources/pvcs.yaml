@@ -15,4 +15,4 @@ spec:
   resources:
     requests:
       storage: "10Gi"
-  storageClassName: longhorn-critical
+  storageClassName: longhorn-retain
