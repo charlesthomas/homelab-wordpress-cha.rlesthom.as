@@ -10,5 +10,5 @@ spec:
   - 'cha.rlesthom.as'
   issuerRef:
     kind: ClusterIssuer
-    name: letsencrypt-staging
+    name: letsencrypt-production
   secretName: cha.rlesthom.as
