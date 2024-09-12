@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/version: 6.6.1
   annotations:
     external-dns.alpha.kubernetes.io/hostname: cha.rlesthom.as
-    external-dns.alpha.kubernetes.io/hostname: rlesthom.as
+    external-dns.alpha.kubernetes.io/target: rlesthom.as
     gethomepage.dev/href: https://cha.rlesthom.as
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Wordpress
