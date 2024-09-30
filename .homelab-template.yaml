@@ -1,11 +1,9 @@
-_commit: v1.8.2-12-g4261f1a
+_commit: v1.12.1-1-g902fdaa
 _src_path: /Users/crthomas/code/charlesthomas/homelab-template
-additionalResources: 'certificates.yaml,network-policies.yaml'
+additionalResources: certificates.yaml,network-policies.yaml
 backups: true
 helm: false
 homepageEnabled: false
-ingHost: cha.rlesthom.as
-ingName: wordpress-cha-rlesthom-as
 ingress: false
 labels: 'app: wordpress'
 name: wordpress
@@ -24,13 +22,5 @@ resources:
 - statefulsets.yaml
 service: false
 serviceAccount: false
-svcAccountName: wordpress
-svcName: wordpress
-svcPortName: http
-svcPortNum: 80
-svcProtocol: TCP
-svcSelector: 'app: wordpress'
-svcTargetPort: http
-svcType: ClusterIP
 upstreamURL: https://wordpress.com/
 url: https://github.com/charlesthomas/homelab-wordpress-cha.rlesthom.as
