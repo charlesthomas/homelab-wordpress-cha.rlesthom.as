@@ -157,9 +157,7 @@ spec:
                   mariadb-admin ping -uroot -p"${password_aux}"
           resources:
             limits:
-              cpu: 375m
               ephemeral-storage: 2Gi
-              memory: 384Mi
             requests:
               cpu: 250m
               ephemeral-storage: 50Mi

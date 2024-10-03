@@ -48,13 +48,9 @@ spec:
           imagePullPolicy: "IfNotPresent"
           resources:
             limits:
-              cpu: 375m
               ephemeral-storage: 2Gi
-              memory: 384Mi
             requests:
-              cpu: 250m
               ephemeral-storage: 50Mi
-              memory: 256Mi
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
