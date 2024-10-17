@@ -17,6 +17,7 @@ metadata:
     gethomepage.dev/icon: wordpress
     gethomepage.dev/name: cha.rlesthom.as
     gethomepage.dev/pod-selector: ""
+    nginx.ingress.kubernetes.io/proxy-body-size: 4m
 spec:
   ingressClassName: "nginx-external"
   rules:
