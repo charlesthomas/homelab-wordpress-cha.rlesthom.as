@@ -18,6 +18,11 @@ metadata:
     gethomepage.dev/name: cha.rlesthom.as
     gethomepage.dev/pod-selector: ""
     nginx.ingress.kubernetes.io/proxy-body-size: 4m
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location ~* "^/.*admin" {
+        deny all;
+        return 403;
+      }
 spec:
   ingressClassName: "nginx-external"
   rules:
