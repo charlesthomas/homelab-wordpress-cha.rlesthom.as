@@ -17,7 +17,6 @@ metadata:
     gethomepage.dev/icon: wordpress
     gethomepage.dev/name: cha.rlesthom.as
     gethomepage.dev/pod-selector: ""
-    nginx.ingress.kubernetes.io/proxy-body-size: 4m
     nginx.ingress.kubernetes.io/server-snippet: |
       location ~* "^/.*admin" {
         deny all;
@@ -40,3 +39,39 @@ spec:
     - hosts:
         - cha.rlesthom.as
       secretName: cha.rlesthom.as
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-internal
+  namespace: wordpress-cha-rlesthom-as
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/version: 6.6.1
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: wp.crt.house
+    gethomepage.dev/href: https://wp.crt.house
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Wordpress Admin
+    gethomepage.dev/group: Web
+    gethomepage.dev/icon: wordpress
+    gethomepage.dev/name: wp.crt.house
+    gethomepage.dev/pod-selector: ""
+    nginx.ingress.kubernetes.io/proxy-body-size: 4m
+spec:
+  ingressClassName: "nginx-internal"
+  rules:
+    - host: "wp.crt.house"
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: wordpress
+                port:
+                  name: http
+  tls:
+    - hosts:
+        - wp.crt.house
+
