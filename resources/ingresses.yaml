@@ -18,6 +18,16 @@ metadata:
     gethomepage.dev/name: cha.rlesthom.as
     gethomepage.dev/pod-selector: ""
     nginx.ingress.kubernetes.io/server-snippet: |
+      if ($http_user_agent ~* "(AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider|CCBot|ChatGPT-User|ClaudeBot|Claude-Web|cohere-ai|DataForSeoBot|Diffbot|FacebookBot|FriendlyCrawler|Google-Extended|GoogleOther|GPTBot|img2dataset|ImagesiftBot|magpie-crawler|Meltwater|omgili|omgilibot|peer39_crawler|peer39_crawler/1.0|PerplexityBot|PiplBot|scoop.it|Seekr|YouBot)"){
+        return 403;
+      }
+      location = /.well-known/webfinger {
+        auth_basic off;
+        allow all;
+        default_type text/plain;
+        try_files $uri $uri/ /index.php?$args;
+        break;
+      }
       location ~* "^/.*admin" {
         deny all;
         return 403;
@@ -58,17 +68,6 @@ metadata:
     gethomepage.dev/name: wp.crt.house
     gethomepage.dev/pod-selector: ""
     nginx.ingress.kubernetes.io/proxy-body-size: 4m
-    nginx.ingress.kubernetes.io/server-snippet: |
-      if ($http_user_agent ~* "(AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider|CCBot|ChatGPT-User|ClaudeBot|Claude-Web|cohere-ai|DataForSeoBot|Diffbot|FacebookBot|FriendlyCrawler|Google-Extended|GoogleOther|GPTBot|img2dataset|ImagesiftBot|magpie-crawler|Meltwater|omgili|omgilibot|peer39_crawler|peer39_crawler/1.0|PerplexityBot|PiplBot|scoop.it|Seekr|YouBot)"){
-        return 403;
-      }
-      location = /.well-known/webfinger {
-        auth_basic off;
-        allow all;
-        default_type text/plain;
-        try_files $uri $uri/ /index.php?$args;
-        break;
-      }
 spec:
   ingressClassName: "nginx-internal"
   rules:
