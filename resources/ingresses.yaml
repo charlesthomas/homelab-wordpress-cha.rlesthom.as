@@ -60,7 +60,7 @@ metadata:
     app.kubernetes.io/version: 6.6.1
   annotations:
     external-dns.alpha.kubernetes.io/hostname: wp.crt.house
-    gethomepage.dev/href: https://wp.crt.house
+    gethomepage.dev/href: https://wp.crt.house/wp-admin/
     gethomepage.dev/enabled: "true"
     gethomepage.dev/description: Wordpress Admin
     gethomepage.dev/group: Web
