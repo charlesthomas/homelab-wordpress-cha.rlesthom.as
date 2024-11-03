@@ -9,7 +9,6 @@ commonLabels:
   app: wordpress
 
 resources:
-- resources/backups.yaml
 - resources/certificates.yaml
 - resources/configmaps.yaml
 - resources/deployments.yaml
