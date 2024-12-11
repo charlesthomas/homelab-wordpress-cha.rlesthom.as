@@ -6,7 +6,7 @@ metadata:
   namespace: wordpress-cha-rlesthom-as
   labels:
     app.kubernetes.io/name: wordpress
-    app.kubernetes.io/version: 6.6.2
+    app.kubernetes.io/version: 6.7.1
 spec:
   selector:
     matchLabels:
@@ -18,7 +18,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: wordpress
-        app.kubernetes.io/version: 6.6.2
+        app.kubernetes.io/version: 6.7.1
     spec:
       automountServiceAccountToken: false
       hostAliases:
@@ -44,7 +44,7 @@ spec:
       serviceAccountName: wordpress
       initContainers:
         - name: prepare-base-dir
-          image: docker.io/bitnami/wordpress:6.6.2
+          image: docker.io/bitnami/wordpress:6.7.1
           imagePullPolicy: "IfNotPresent"
           resources:
             limits:
@@ -99,7 +99,7 @@ spec:
               mountPath: /emptydir
       containers:
         - name: wordpress
-          image: docker.io/bitnami/wordpress:6.6.2
+          image: docker.io/bitnami/wordpress:6.7.1
           imagePullPolicy: "IfNotPresent"
           securityContext:
             allowPrivilegeEscalation: false
