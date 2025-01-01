@@ -67,7 +67,7 @@ metadata:
     gethomepage.dev/icon: wordpress
     gethomepage.dev/name: wp.crt.house
     gethomepage.dev/pod-selector: ""
-    nginx.ingress.kubernetes.io/proxy-body-size: 4m
+    nginx.ingress.kubernetes.io/proxy-body-size: 80m
 spec:
   ingressClassName: "nginx-internal"
   rules:
