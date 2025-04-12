@@ -44,7 +44,7 @@ spec:
       serviceAccountName: wordpress
       initContainers:
         - name: prepare-base-dir
-          image: docker.io/bitnami/wordpress:6.7.1
+          image: wordpress
           imagePullPolicy: "IfNotPresent"
           resources:
             limits:

@@ -8,6 +8,11 @@ commonAnnotations:
 commonLabels:
   app: wordpress
 
+images:
+  - name: wordpress
+    newName: docker.io/bitnami/wordpress
+    newTag: 6.7.2
+
 resources:
 - resources/certificates.yaml
 - resources/configmaps.yaml
