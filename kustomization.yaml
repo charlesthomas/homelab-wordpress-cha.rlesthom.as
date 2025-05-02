@@ -11,7 +11,7 @@ commonLabels:
 images:
   - name: wordpress
     newName: docker.io/bitnami/wordpress
-    newTag: 6.8.0
+    newTag: 6.8.1
 
 resources:
 - resources/certificates.yaml
