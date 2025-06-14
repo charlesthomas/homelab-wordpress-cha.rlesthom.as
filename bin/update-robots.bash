@@ -14,3 +14,6 @@ cat resources/ingresses.yaml | while IFS= read line; do
 done
 
 mv $out resources/ingresses.yaml
+git add resources/ingresses.yaml
+git commit -m "chore: update robots"
+git push
