@@ -9,7 +9,6 @@ metadata:
     app.kubernetes.io/version: 11.4.3
     app.kubernetes.io/component: primary
 spec:
-  replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -25,7 +24,6 @@ spec:
         app.kubernetes.io/version: 11.4.3
         app.kubernetes.io/component: primary
     spec:
-      
       automountServiceAccountToken: false
       serviceAccountName: mariadb
       affinity:
