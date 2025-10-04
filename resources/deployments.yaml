@@ -43,7 +43,7 @@ spec:
       serviceAccountName: wordpress
       initContainers:
         - name: prepare-base-dir
-          image: wordpress
+          image: docker.io/bitnamilegacy/wordpress:6.7.1
           imagePullPolicy: "IfNotPresent"
           resources:
             limits:
@@ -98,7 +98,7 @@ spec:
               mountPath: /emptydir
       containers:
         - name: wordpress
-          image: docker.io/bitnami/wordpress:6.7.1
+          image: docker.io/bitnamilegacy/wordpress:6.7.1
           imagePullPolicy: "IfNotPresent"
           securityContext:
             allowPrivilegeEscalation: false
