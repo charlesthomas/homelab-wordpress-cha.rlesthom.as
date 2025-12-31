@@ -10,8 +10,11 @@ commonLabels:
 
 images:
   - name: wordpress
-    newName: docker.io/bitnami/wordpress
+    newName: docker.io/bitnamilegacy/wordpress
     newTag: 6.8.2
+  - name: mariadb
+    newName: docker.io/bitnamilegacy/mariadb
+    newTag: 11.4.3-debian-12-r0
 
 resources:
 - resources/certificates.yaml

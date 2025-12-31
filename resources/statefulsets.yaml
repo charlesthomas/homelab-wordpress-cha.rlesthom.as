@@ -45,7 +45,7 @@ spec:
         sysctls: []
       initContainers:
         - name: preserve-logs-symlinks
-          image: docker.io/bitnamilegacy/mariadb:11.4.3-debian-12-r0
+          image: mariadb
           imagePullPolicy: "IfNotPresent"
           securityContext:
             allowPrivilegeEscalation: false
@@ -86,7 +86,7 @@ spec:
               mountPath: /emptydir
       containers:
         - name: mariadb
-          image: docker.io/bitnami/mariadb:11.4.3-debian-12-r0
+          image: mariadb
           imagePullPolicy: "IfNotPresent"
           securityContext:
             allowPrivilegeEscalation: false
