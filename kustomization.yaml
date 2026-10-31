@@ -5,8 +5,10 @@ namespace: wordpress-cha-rlesthom-as
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-wordpress-cha.rlesthom.as
-commonLabels:
-  app: wordpress
+labels:
+- includeSelectors: true
+  pairs:
+    app: wordpress
 
 images:
   - name: wordpress
@@ -49,3 +51,11 @@ patches:
         reloader.stakater.com/auto: "true"
   target:
     kind: StatefulSet
+configMapGenerator:
+- name: grafana-dashboard-wordpress
+  files:
+  - grafana/wordpress.json
+  options:
+    disableNameSuffixHash: true
+    labels:
+      grafana_dashboard: "1"
