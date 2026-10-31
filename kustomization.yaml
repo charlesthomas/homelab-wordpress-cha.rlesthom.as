@@ -5,8 +5,10 @@ namespace: wordpress-cha-rlesthom-as
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-wordpress-cha.rlesthom.as
-commonLabels:
-  app: wordpress
+labels:
+- includeSelectors: true
+  pairs:
+    app: wordpress
 
 images:
   - name: wordpress
